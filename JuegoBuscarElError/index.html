@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Busca el Error!</title>
+    <style>
+        body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-image: url('../imagen/WhatsApp Image 2024-09-05 at 12.17.12 AM (3).jpeg');
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    color: #333;
+    text-align: center;
+    height: 100vh;
+    width: 100vw; /* Ajusta el ancho al viewport */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el scroll si el contenido se desborda */
+}
+
+.container {
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 80%;
+    max-width: 700px;
+    position: relative; /* Para posicionar el contenido sobre la imagen de fondo */
+    z-index: 1; /* Asegura que el contenedor esté sobre el fondo */
+}
+
+        h1 {
+            color: #382b31;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .sentence {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: 2px dashed #121111;
+            border-radius: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #191718;
+            font-size: 18px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .button {
+            background-color: #25101a;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #4a4749;
+        }
+        .feedback {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .feedback.correct { color: #4CAF50; }
+        .feedback.incorrect { color: #FF6347; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Busca el Error!</h1>
+        <div class="instructions">
+            Encuentra y corrige el error en la siguiente oración. Escribe la oración corregida en el cuadro de texto y haz clic en "Comprobar" para ver si has acertado.
+        </div>
+        <div class="sentence" id="sentence"></div>
+        <textarea id="correction" placeholder="Escribe aquí la oración corregida"></textarea>
+        <button class="button" onclick="checkCorrection()">Comprobar</button>
+        <div id="feedback" class="feedback"></div>
+        <button class="button" onclick="loadQuestion()">Nueva Pregunta</button>
+    </div>
+
+    <script>
+        const questions = [
+            { sentence: "El gato se duerme en la sillas.", correct: "El gato se duerme en la silla." },
+            { sentence: "Los perro están en el parque.", correct: "Los perros están en el parque." },
+            { sentence: "Maria y Juan va al cine.", correct: "María y Juan van al cine." },
+            { sentence: "Nosotros comemos manzana y naranja.", correct: "Nosotros comemos manzanas y naranjas." }
+        ];
+
+        let currentQuestion;
+
+        function getRandomQuestion() {
+            return questions[Math.floor(Math.random() * questions.length)];
+        }
+
+        function loadQuestion() {
+            currentQuestion = getRandomQuestion();
+            document.getElementById('sentence').textContent = currentQuestion.sentence;
+            document.getElementById('correction').value = '';
+            document.getElementById('feedback').textContent = '';
+        }
+
+        function checkCorrection() {
+            const userCorrection = document.getElementById('correction').value.trim().toLowerCase();
+            const correctAnswer = currentQuestion.correct.trim().toLowerCase();
+            const feedback = document.getElementById('feedback');
+            
+            if (userCorrection === correctAnswer) {
+                feedback.textContent = "¡Correcto! ¡Bien hecho!";
+                feedback.className = "feedback correct";
+            } else {
+                feedback.textContent = "Incorrecto. Intenta de nuevo.";
+                feedback.className = "feedback incorrect";
+            }
+        }
+
+        // Cargar una nueva pregunta cuando se carga la página
+        window.onload = loadQuestion;
+    </script>
+</body>
+</html>

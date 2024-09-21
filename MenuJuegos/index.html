@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-arrow-left arrow-icon"></i>
+                    <img src="imagen/vocabuilder.png" alt="Logo">
+                    <i class="fa-regular fa-heart heart-icon"></i>
+                </div>
+                <div class="product-content">
+                    <div class="product-txt">
+                        <span>Quiz</span>
+                        <p>Desafía tus conocimientos con preguntas intrigantes y divertidas. ¡Cada respuesta correcta te acerca a ser el gran maestro de la gramática! ¿Estás listo para el reto? ¡Que comiencen los juegos de palabras!</p>
+                    </div>
+                    <div class="product-img">
+                        <img src="../imagen/uno.jpeg" alt="Imagen del producto">
+                    </div>
+                </div>
+                <a href="../quiz/index.html" class="btn-1">Jugar</a>
+            </div>
+            
+            
+            <div class="swiper-slide">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-arrow-left arrow-icon"></i>
+                    <img src="imagen/vocabuilder.png" alt="Logo">
+                    <i class="fa-regular fa-heart heart-icon"></i>
+                </div>
+                <div class="product-content">
+                    <div class="product-txt">
+                        <span>Adivina la palabra</span>
+                        <p>Desafía tus conocimientos con pistas intrigantes y divertidas. Cada palabra adivinada te acerca a convertirte en el gran maestro de las letras. ¿Listo para el reto? ¡Que comiencen los juegos de palabras!</p>
+                    </div>
+                    <div class="product-img">
+                        <img src="../imagen/WhatsApp Image 2024-09-11 at 11.40.23 AM.jpeg" alt="Imagen del producto">
+                    </div>
+                </div>
+                <a href="../adivinalapalabra-main/" class="btn-1">Jugar</a>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-arrow-left arrow-icon"></i>
+                    <img src="imagen/vocabuilder.png" alt="Logo">
+                    <i class="fa-regular fa-heart heart-icon"></i>
+                </div>
+                <div class="product-content">
+                    <div class="product-txt">
+                        <span>Busca el error</span>
+                        <p>Pon a prueba tu agudeza con frases llenas de errores ocultos. Cada acierto te acerca a dominar el arte de la precisión. ¿Preparado para el desafío? ¡Que comiencen los juegos de corrección!</p>
+                    </div>
+                    <div class="product-img">
+                        <img src="../imagen/WhatsApp Image 2024-09-11 at 11.41.01 AM.jpeg" alt="Imagen del producto">
+                    </div>
+                </div>
+                <a href="../JuegoBuscarElError/index.html" class="btn-1">Jugar</a>
+            </div>
+            <div class="swiper-slide">
+                <div class="icon">
+                    <i class="fa-solid fa-circle-arrow-left arrow-icon"></i>
+                    <img src="imagen/vocabuilder.png" alt="Logo">
+                    <i class="fa-regular fa-heart heart-icon"></i>
+                </div>
+                <div class="product-content">
+                    <div class="product-txt">
+                        <span>Construye oraciones</span>
+                        <p>Enfréntate a desafíos para armar oraciones perfectas y demuestra tu dominio del lenguaje. Cada oración bien construida te acerca a convertirte en un experto en comunicación. ¿Listo para crear? ¡Que comiencen los juegos de palabras!</p>
+                    </div>
+                    <div class="product-img">
+                        <img src="../imagen/WhatsApp Image 2024-09-11 at 11.41.23 AM.jpeg" alt="Imagen del producto">
+                    </div>
+                </div>
+                <a href="../JuegoConstruyeLaOracion/index.html" class="btn-1">Jugar</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            coverflowEffect: {
+                depth: 500,
+                modifier: 1,
+                slidesShadows: true,
+                rotate: 0,
+                stretch: 0
+            }
+        });
+
+        // Funcionalidad de la flecha para volver a la página de inicio
+        document.querySelectorAll('.arrow-icon').forEach(function(icon) {
+            icon.addEventListener('click', function() {
+                window.location.href = '../'; // Cambia la URL según la ubicación de tu página de inicio
+            });
+        });
+
+        // Animación del corazón
+        document.querySelectorAll('.heart-icon').forEach(function(icon) {
+            icon.addEventListener('click', function() {
+                icon.classList.add('animate-heart');
+                setTimeout(function() {
+                    icon.classList.remove('animate-heart');
+                }, 1000); // Duración de la animación
+            });
+        });
+    </script>
+</body>
+</html>

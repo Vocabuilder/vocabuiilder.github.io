@@ -1,0 +1,126 @@
+/* Estilos Globales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', sans-serif;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #ADE0DB; /* Color de fondo coherente con la página de inicio */
+}
+
+
+/* Swiper Container */
+.swiper {
+    width: 100%;
+    padding: 50px 20px; /* Añadido relleno uniforme */
+}
+
+/* Swiper Slide */
+.swiper-slide {
+    width: 300px;
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.swiper-slide:hover {
+    background-color: #e0f2f1; /* Color de fondo similar a la página de inicio */
+    transform: scale(1.05); /* Efecto de escala en el hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Iconos */
+.icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Reducido para una mejor alineación */
+}
+
+.icon i {
+    font-size: 24px; /* Tamaño más grande para los iconos */
+    color: #33519c; /* Color consistente con el tema */
+    cursor: pointer; /* Indicar que el icono es clickeable */
+}
+
+.icon img {
+    width: 120px;
+}
+
+/* Contenido del Producto */
+.product-content {
+    display: flex;
+    flex-direction: column; /* Apilar texto e imagen verticalmente */
+    align-items: center;
+}
+
+.product-txt {
+    text-align: center;
+    color: #333;
+}
+
+.product-txt span {
+    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    color: #33519c; /* Color consistente con el tema */
+    font-weight: bold;
+}
+
+
+.product-txt p {
+    font-size: 0.875rem; /* Fuente más pequeña */
+    color: #555;
+}
+
+/* Imagen del Producto */
+.product-img img {
+    width: 150px; /* Imagen más grande para mayor impacto visual */
+    border-radius: 15px; /* Bordes redondeados */
+}
+
+/* Botón */
+.btn-1 {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #33519c; /* Borde consistente con el tema */
+    border-radius: 25px;
+    color: #33519c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-1:hover {
+    background-color: #33519c;
+    color: #ffffff;
+}
+
+/* Animación del Corazón */
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+        color: #ff4081; /* Color del corazón al hacer clic */
+    }
+    100% {
+        transform: scale(1);
+        color: #33519c; /* Color original del corazón */
+    }
+}
+
+.heart-icon.animate-heart {
+    animation: heartBeat 1s ease;
+}
+

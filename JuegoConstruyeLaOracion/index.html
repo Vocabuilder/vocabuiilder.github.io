@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construye la Oración</title>
+    <style>
+        body {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background-image: url('../imagen/WhatsApp Image 2024-09-05 at 12.17.12 AM (2).jpeg');
+        background-size: cover; /* Asegura que la imagen cubra toda el área */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita la repetición de la imagen */
+        color: #333;
+        text-align: center;
+        height: 100vh;
+        width: 100vw; /* Ajusta el ancho al viewport */
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Evita el scroll si el contenido se desborda */
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 30px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        width: 80%;
+        max-width: 700px;
+        position: relative; /* Para posicionar el contenido sobre la imagen de fondo */
+        z-index: 1; /* Asegura que el contenedor esté sobre el fondo */
+    }
+
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .sentence {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: 2px dashed #4a90e2;
+            border-radius: 10px;
+        }
+        .dropzone {
+            display: inline-block;
+            padding: 15px;
+            margin: 10px;
+            border: 2px dashed #4a90e2;
+            border-radius: 10px;
+            min-width: 120px;
+            height: 60px;
+            vertical-align: top;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .word {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border: 2px solid #4a90e2;
+            border-radius: 10px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .word:hover {
+            background-color: #e0f0ff;
+        }
+        .button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #357abd;
+        }
+        .feedback {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .feedback.correct { color: #4CAF50; }
+        .feedback.incorrect { color: #FF6347; }
+        .counter {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #777;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s;
+        }
+        .modal-content {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            animation: slideIn 0.5s;
+        }
+        .modal-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #4a90e2;
+        }
+        .modal-body {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .modal-footer {
+            margin-top: 20px;
+        }
+        .modal-button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .modal-button:hover {
+            background-color: #357abd;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Construye la Oración</h1>
+        <div class="instructions">
+            Arrastra las palabras a las áreas de la oración para formar una frase correcta. Cuando termines, haz clic en "Comprobar" para ver si has construido la oración correctamente.
+        </div>
+        <div class="sentence">
+            <div id="dropzone1" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="dropzone2" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="dropzone3" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="dropzone4" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="dropzone5" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div id="words-container"></div>
+        <button class="button" onclick="checkSentence()">Comprobar</button>
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <!-- Modal for results -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">¡Resultados Finales!</div>
+            <div id="result-content" class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="modal-button" onclick="closeModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const sentences = [
+            { order: ["El", "gato", "en", "la", "silla"], words: ["El", "gato", "en", "la", "silla"] },
+            { order: ["La", "niña", "lee", "un", "libro"], words: ["La", "niña", "lee", "un", "libro"] },
+            { order: ["El", "perro", "juega", "en", "el jardín"], words: ["El", "perro", "juega", "en", "el jardín"] },
+            { order: ["Los", "niños", "corren", "en", "el parque"], words: ["Los", "niños", "corren", "en", "el parque"] },
+            { order: ["El", "sol", "brilla", "en", "el cielo"], words: ["El", "sol", "brilla", "en", "el cielo"] },
+            { order: ["Los", "pájaros", "cantan", "en", "la mañana"], words: ["Los", "pájaros", "cantan", "en", "la mañana"] },
+            { order: ["Mi", "amigo", "estudia", "en", "la biblioteca"], words: ["Mi", "amigo", "estudia", "en", "la biblioteca"] },
+            { order: ["Ella", "come", "manzanas", "y", "naranjas"], words: ["Ella", "come", "manzanas", "y", "naranjas"] }
+        ];
+
+        let currentSentence;
+        let currentAttempt = 0;
+        const maxAttempts = 5;
+        let totalCorrect = 0;
+        const totalSentences = sentences.length;
+
+        function getRandomSentence() {
+            const randomIndex = Math.floor(Math.random() * totalSentences);
+            return sentences[randomIndex];
+        }
+
+        function loadSentence() {
+            currentSentence = getRandomSentence();
+            document.querySelectorAll('.dropzone').forEach(zone => zone.innerHTML = '');
+            const wordsContainer = document.getElementById('words-container');
+            wordsContainer.innerHTML = '';
+            currentSentence.words.forEach((word, index) => {
+                const wordDiv = document.createElement('div');
+                wordDiv.className = 'word';
+                wordDiv.id = 'word'
+                wordDiv.id = 'word' + index;
+                wordDiv.draggable = true;
+                wordDiv.textContent = word;
+                wordDiv.ondragstart = drag;
+                wordsContainer.appendChild(wordDiv);
+            });
+            document.getElementById('attempts-left').textContent = maxAttempts;
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData('text', event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData('text');
+            const draggedElement = document.getElementById(data);
+            event.target.appendChild(draggedElement);
+        }
+
+        function checkSentence() {
+            const zones = document.querySelectorAll('.dropzone');
+            const userOrder = Array.from(zones).map(zone => Array.from(zone.children).map(child => child.textContent));
+            const correctOrder = currentSentence.order;
+            const feedback = document.getElementById('feedback');
+
+            if (userOrder.join(' ') === correctOrder.join(' ')) {
+                feedback.textContent = "¡Correcto! ¡Bien hecho!";
+                feedback.className = "feedback correct";
+                totalCorrect++;
+                if (totalCorrect === totalSentences) {
+                    showResultModal(true);
+                } else {
+                    currentAttempt = 0;
+                    loadSentence();
+                }
+            } else {
+                currentAttempt++;
+                if (currentAttempt >= maxAttempts) {
+                    feedback.textContent = `Has agotado los intentos. La respuesta correcta era: '${correctOrder.join(' ')}'.`;
+                    feedback.className = "feedback incorrect";
+                    if (totalCorrect === totalSentences) {
+                        showResultModal(true);
+                    } else {
+                        showResultModal(false);
+                    }
+                } else {
+                    feedback.textContent = `Incorrecto. Intentos restantes: ${maxAttempts - currentAttempt}.`;
+                    feedback.className = "feedback incorrect";
+                }
+            }
+        }
+
+        function showResultModal(isWinner) {
+            const resultContent = isWinner ? "¡Felicidades! Has completado todas las oraciones correctamente." : "Juego terminado. Has fallado en algunas oraciones.";
+            document.getElementById('result-content').textContent = resultContent;
+            document.getElementById('result-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('result-modal').style.display = 'none';
+            // Reset for new session
+            currentAttempt = 0;
+            totalCorrect = 0;
+            loadSentence();
+        }
+
+        // Initialize the game
+        loadSentence();
+    </script>
+</body>
+</html>

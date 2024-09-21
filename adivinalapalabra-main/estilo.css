@@ -1,0 +1,192 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-image: url('../imagen/WhatsApp Image 2024-09-05 at 12.17.12 AM.jpeg');
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    color: #333;
+    text-align: center;
+    height: 100vh;
+    width: 100vw; /* Ajusta el ancho al viewport */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el scroll si el contenido se desborda */
+}
+
+.container {
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 80%;
+    max-width: 700px;
+    position: relative; /* Para posicionar el contenido sobre la imagen de fondo */
+    z-index: 1; /* Asegura que el contenedor esté sobre el fondo */
+}
+section{
+    width: 500px;
+    background-color: #fff;
+    border: 7px solid #ae91c5;
+    color: #000;
+    padding: 7px;
+}
+h2{
+    border-bottom: 1px solid #9b58d1;
+    text-align: center;
+    padding-bottom: 5px;
+}
+#palabra{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+.letra{
+    height: 50px;
+    width: 50px;
+    border: 2px solid #9b58d1;
+    text-align: center;
+    margin: 4px;
+    font-weight: 600;
+    font-size: 30px;
+}
+.pintar{
+    background-color: #02bfa4;;
+}
+.pintarError{
+    background-color: red;
+}
+h3{
+    margin: 4px 0;
+    font-weight: normal;
+    font-size: 16px;
+}
+h3 span{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+button{
+    display: block;
+    width: fit-content;
+    margin: auto;
+    background-color:#02bfa4;
+    border: 2px solid #02bfa4;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: .5s;
+}
+button:hover{
+    background-color: #02bfa4;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-image: url('../imagen/WhatsApp Image 2024-09-05 at 12.17.12 AM.jpeg');
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    color: #333;
+    text-align: center;
+    height: 100vh;
+    width: 100vw; /* Ajusta el ancho al viewport */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el scroll si el contenido se desborda */
+}
+
+.container {
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 80%;
+    max-width: 700px;
+    position: relative; /* Para posicionar el contenido sobre la imagen de fondo */
+    z-index: 1; /* Asegura que el contenedor esté sobre el fondo */
+}
+section{
+    width: 500px;
+    background-color: #fff;
+    border: 7px solid #ae91c5;
+    color: #000;
+    padding: 7px;
+}
+h2{
+    border-bottom: 1px solid #9b58d1;
+    text-align: center;
+    padding-bottom: 5px;
+}
+#palabra{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+.letra{
+    height: 50px;
+    width: 50px;
+    border: 2px solid #9b58d1;
+    text-align: center;
+    margin: 4px;
+    font-weight: 600;
+    font-size: 30px;
+}
+.pintar{
+    background-color: #02bfa4;;
+}
+.pintarError{
+    background-color: red;
+}
+h3{
+    margin: 4px 0;
+    font-weight: normal;
+    font-size: 16px;
+}
+h3 span{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+button{
+    display: block;
+    width: fit-content;
+    margin: auto;
+    background-color:#02bfa4;
+    border: 2px solid #02bfa4;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: .5s;
+}
+button:hover{
+    background-color: #02bfa4;
+>>>>>>> 16f2e0a6714a1c270c46a2e5a766fea09c8f5e5b
+}

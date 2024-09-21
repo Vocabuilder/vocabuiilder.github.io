@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Mochiy Pop One';
+}
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #ADE0DB;
+    overflow: hidden;
+    z-index: -1; /* Ajusta el z-index */
+}
+div{
+    color: white;
+}
+body{
+    margin: 10%;
+}
+.background span {
+    width: 1vmin;
+    height: 1vmin;
+    border-radius: 1vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move;
+    animation-duration: 9;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.background span:nth-child(0) {
+    color: #FFACAC;
+    top: 51%;
+    left: 95%;
+    animation-duration: 269s;
+    animation-delay: -225s;
+    transform-origin: -18vw -14vh;
+    box-shadow: -2vmin 0 0.3116549377745601vmin currentColor;
+}
+.background span:nth-child(1) {
+    color: #FFACAC;
+    top: 58%;
+    left: 98%;
+    animation-duration: 45s;
+    animation-delay: -319s;
+    transform-origin: -19vw -2vh;
+    box-shadow: -2vmin 0 0.37820175741533224vmin currentColor;
+}
+.background span:nth-child(2) {
+    color: #FFACAC;
+    top: 25%;
+    left: 53%;
+    animation-duration: 383s;
+    animation-delay: -28s;
+    transform-origin: 3vw 1vh;
+    box-shadow: 2vmin 0 0.35010624949825964vmin currentColor;
+}
+.background span:nth-child(3) {
+    color: #E45A84;
+    top: 76%;
+    left: 20%;
+    animation-duration: 197s;
+    animation-delay: -73s;
+    transform-origin: 4vw 14vh;
+    box-shadow: 2vmin 0 0.5791229040735155vmin currentColor;
+}
+.background span:nth-child(4) {
+    color: #E45A84;
+    top: 38%;
+    left: 56%;
+    animation-duration: 26s;
+    animation-delay: -349s;
+    transform-origin: 7vw 23vh;
+    box-shadow: 2vmin 0 0.36026028374676433vmin currentColor;
+}
+.background span:nth-child(5) {
+    color: #583C87;
+    top: 39%;
+    left: 66%;
+    animation-duration: 307s;
+    animation-delay: -217s;
+    transform-origin: 5vw -2vh;
+    box-shadow: -2vmin 0 0.39258441693492085vmin currentColor;
+}
+.background span:nth-child(6) {
+    color: #FFACAC;
+    top: 1%;
+    left: 69%;
+    animation-duration: 119s;
+    animation-delay: -299s;
+    transform-origin: 10vw 22vh;
+    box-shadow: -2vmin 0 0.4081044754367895vmin currentColor;
+}
+.background span:nth-child(7) {
+    color: #E45A84;
+    top: 6%;
+    left: 40%;
+    animation-duration: 317s;
+    animation-delay: -253s;
+    transform-origin: 22vw 13vh;
+    box-shadow: -2vmin 0 0.37134542368651524vmin currentColor;
+}
+.background span:nth-child(8) {
+    color: #E45A84;
+    top: 13%;
+    left: 64%;
+    animation-duration: 16s;
+    animation-delay: -18s;
+    transform-origin: -10vw 1vh;
+    box-shadow: 2vmin 0 0.8379965261623021vmin currentColor;
+}
+.background span:nth-child(9) {
+    color: #E45A84;
+    top: 97%;
+    left: 83%;
+    animation-duration: 370s;
+    animation-delay: -355s;
+    transform-origin: 25vw -14vh;
+    box-shadow: -2vmin 0 0.47040092326572247vmin currentColor;
+}
+.background span:nth-child(10) {
+    color: #E45A84;
+    top: 63%;
+    left: 33%;
+    animation-duration: 28s;
+    animation-delay: -151s;
+    transform-origin: -10vw 14vh;
+    box-shadow: 2vmin 0 0.37256283452847105vmin currentColor;
+}
+.background span:nth-child(11) {
+    color: #583C87;
+    top: 81%;
+    left: 76%;
+    animation-duration: 140s;
+    animation-delay: -375s;
+    transform-origin: 7vw 5vh;
+    box-shadow: -2vmin 0 0.6823279079614095vmin currentColor;
+}
+.background span:nth-child(12) {
+    color: #583C87;
+    top: 93%;
+    left: 7%;
+    animation-duration: 236s;
+    animation-delay: -213s;
+    transform-origin: -10vw 21vh;
+    box-shadow: -2vmin 0 0.9484270903531093vmin currentColor;
+}
+.background span:nth-child(13) {
+    color: #E45A84;
+    top: 62%;
+    left: 95%;
+    animation-duration: 375s;
+    animation-delay: -284s;
+    transform-origin: 24vw 15vh;
+    box-shadow: 2vmin 0 1.1574165652712627vmin currentColor;
+}
+.background span:nth-child(14) {
+    color: #E45A84;
+    top: 18%;
+    left: 25%;
+    animation-duration: 100s;
+    animation-delay: -166s;
+    transform-origin: -20vw -4vh;
+    box-shadow: 2vmin 0 1.175869299484485vmin currentColor;
+}
+.background span:nth-child(15) {
+    color: #FFACAC;
+    top: 17%;
+    left: 62%;
+    animation-duration: 146s;
+    animation-delay: -410s;
+    transform-origin: -13vw -18vh;
+    box-shadow: -2vmin 0 1.009470564921342vmin currentColor;
+}
+.background span:nth-child(16) {
+    color: #E45A84;
+    top: 82%;
+    left: 7%;
+    animation-duration: 92s;
+    animation-delay: -405s;
+    transform-origin: -23vw -18vh;
+    box-shadow: 2vmin 0 0.4839753049781259vmin currentColor;
+}
+.background span:nth-child(17) {
+    color: #FFACAC;
+    top: 77%;
+    left: 83%;
+    animation-duration: 205s;
+    animation-delay: -113s;
+    transform-origin: 9vw 23vh;
+    box-shadow: -2vmin 0 0.36920658074231194vmin currentColor;
+}
+.background span:nth-child(18) {
+    color: #E45A84;
+    top: 63%;
+    left: 6%;
+    animation-duration: 198s;
+    animation-delay: -157s;
+    transform-origin: -16vw 13vh;
+    box-shadow: 2vmin 0 0.6794759668227448vmin currentColor;
+}
+.background span:nth-child(19) {
+    color: #583C87;
+    top: 93%;
+    left: 43%;
+    animation-duration: 126s;
+    animation-delay: -241s;
+    transform-origin: 15vw 10vh;
+    box-shadow: 2vmin 0 0.5821072116663275vmin currentColor;
+}
+
+h1{
+    width: fit-content;
+    background-color: #fff;
+    margin: 40px auto;
+    border-radius: 60px;
+    box-shadow: 5px 5px 0 #000;
+    padding: 20px 30px;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #000;
+    font-size: 12px;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    align-items: 10px;
+}
+
+/* PANTALLA INICIO */
+#pantalla-inicial{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+}
+#pantalla-inicial{
+    margin: 60px 0;
+}
+.btn{
+    border: none;
+    background: #580078;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .5s;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+
+
+
+/* PANTALLA juego */
+#pantalla-juego{
+    display: none;
+}
+.pantalla-juego{
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+.pantalla-juego img{
+    max-width: 400px;
+    width: 100%;
+}
+.opciones{
+    max-width: 400px;
+    margin: auto;
+}
+.opcion{
+    display: flex;
+    position: relative;
+    align-items: center;
+    max-width: 400px;
+    margin: 30px auto;
+    cursor: pointer;
+}
+.opcion .letra{
+    background-color: #580078;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 35px;
+    border: 5px solid #fff;
+    position: relative;
+}
+.opcion .nombre{
+    background: #fff;
+    width: 100%;
+    font-size: 25px;
+    position: absolute;
+    margin-left: 30px;
+    z-index: -2;
+    border-radius: 0 20px 20px 0;
+    padding: 7px 0 7px 30px;
+}
+/* clases que se aplicará cuando haya acertada la opcion  */
+.opcion .nombreAcertada{
+    background-color: yellowgreen;
+    color: #fff;
+}
+.opcion .letraAcertada{
+    background-color: yellowgreen;
+    color: #fff ;
+}
+/* clases que se aplicaran cuando se equivoque en la opcion elegida */
+.opcion .nombreNoAcertada{
+    background-color: darkred;
+    color: #fff;
+}
+.opcion .letraNoAcertada{
+    background-color: darkred;
+    color: #fff;
+}
+
+
+
+
+/* PANTALLA final */
+#pantalla-final{
+    display: none;
+    text-align: center;
+}
+#pantalla-final #numCorrectas{
+    background-color: chartreuse;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+#pantalla-final #numIncorrectas{
+    background-color: rgb(189, 32, 32);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}

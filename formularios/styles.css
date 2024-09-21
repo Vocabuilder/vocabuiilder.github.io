@@ -1,0 +1,177 @@
+/* Estilos Globales */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #ADE0DB; /* Color de fondo coherente con la página de inicio */
+}
+
+/* Cabecera */
+.header {
+    background-color: #33519c; /* Color de la cabecera */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 0 5%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.header .logo img {
+    border-radius: 50%;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.header .logo p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1rem; /* Ajusta el tamaño del texto  */
+    color: #e0f2f1; /* Color del texto */
+}
+
+.header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.header .nav-links li {
+    margin: 0 15px;
+}
+
+.header .nav-links a {
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header .nav-links a:hover {
+    color: #ff4081;
+}
+
+.header .btn button {
+    background-color: #ffffff;
+    color: #33519c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header .btn button:hover {
+    background-color: #33519c;
+    color: #ffffff; /* Cambia el color del texto al pasar el ratón */
+}
+
+/* Sección Cuerpo */
+.cuerpo {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Incluye padding y border en el width y height */
+}
+
+.container {
+    display: grid; /* Usa Grid para organizar las tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta el número de columnas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box; /* Incluye padding en el width */
+}
+
+.card {
+    width: 100%; /* Ajusta el ancho al contenedor */
+    height: 180px;
+    background: #ffffff; /* Fondo blanco para las tarjetas */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más ligera */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card3 {
+    margin: 0 200px; /* Asegúrate de que esta clase no cause problemas en diferentes tamaños de pantalla */
+}
+
+.card:hover {
+    background-color: #e0f2f1;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: bounce 0.6s ease; /* Agrega la animación de rebote */
+}
+
+.content h2 {
+    font-size: 24px;
+    color: #33519c;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.btn_card {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #33519c;
+    border-radius: 25px;
+    color: #33519c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn_card:hover {
+    background-color: #00796b;
+    color: #ffffff;
+    animation: pulse 1s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Iconos */
+.icon i {
+    font-size: 24px; /* Tamaño más grande para los iconos */
+    color: #33519c; /* Color consistente con el tema */
+    cursor: pointer; /* Indicar que el icono es clickeable */
+}
