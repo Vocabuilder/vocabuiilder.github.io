@@ -90,8 +90,7 @@ body {
     transform: scale(1.1) rotate(5deg);
 }
 
-
-
+/* Estilos de las Tarjetas */
 .card {
     display: flex;
     flex-direction: column;
@@ -103,7 +102,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: bounceIn 1s ease-out;
-    /* Asegura que la tarjeta se estire para llenar el espacio disponible */
     height: 500px; /* Ajusta la altura según el contenido */
 }
 
@@ -154,7 +152,6 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-
 @keyframes bounceIn {
     0% { transform: scale(0.5); opacity: 0; }
     50% { transform: scale(1.1); opacity: 1; }
@@ -185,51 +182,12 @@ body {
     padding: 20px;
 }
 
-.card-content h2 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    color: #33519c;
-    transition: color 0.3s ease;
-}
-
-.card-content h2:hover {
-    color: #ffab00;
-    transform: translateY(-5px);
-}
-
-.card-content p {
-    margin-bottom: 20px;
-}
-
-.btn_card {
-    display: inline-block;
-    background-color: #33519c;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn_card:hover {
-    background-color: #33519c;
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
 /* Estilos de la Sección de Texto Apartado */
 .texto-aparte {
     background-color: #ffffff;
     border-radius: 15px;
     padding: 40px;
-<<<<<<< HEAD
-    margin: 20px;
-=======
     margin: 20px auto;
->>>>>>> 16f2e0a6714a1c270c46a2e5a766fea09c8f5e5b
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     line-height: 1.8;
 }
@@ -352,6 +310,7 @@ body {
 .footer-bottom a:hover {
     text-decoration: underline;
 }
+
 /* Estilos del Juego de Relacionar */
 .game-section {
     background-color: #ffffff;
@@ -363,7 +322,6 @@ body {
     transition: box-shadow 0.3s ease;
     animation: fadeIn 1s ease-in;
 }
-
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -439,40 +397,48 @@ body {
     margin-top: 20px;
     color: #00796b;
 }
+
+/* Estilos del Carrusel */
 .carousel {
     position: relative;
     width: 100%;
-<<<<<<< HEAD
-    height: 60vh; /* Puedes ajustar esto según tus necesidades */
-=======
     height: 50vh; /* Ocupa el 100% de la altura de la ventana */
->>>>>>> 16f2e0a6714a1c270c46a2e5a766fea09c8f5e5b
     overflow: hidden;
 }
 
 .carousel-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
-<<<<<<< HEAD
-    height: 100%;
-    width: 100%;
-=======
     height: 100%; /* Asegura que las imágenes ocupen toda la altura del contenedor */
->>>>>>> 16f2e0a6714a1c270c46a2e5a766fea09c8f5e5b
 }
 
 .carousel-slide {
     min-width: 100%;
     height: 100%;
     box-sizing: border-box;
-<<<<<<< HEAD
     position: relative;
+}
+.btn_card {
+    display: inline-block; /* Para que se comporte como un botón */
+    background-color: #33519c; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 25px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centrar texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.btn_card:hover {
+    background-color: #ffab00; /* Color al pasar el mouse */
+    transform: scale(1.1); /* Aumentar tamaño al pasar el mouse */
 }
 
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin distorsionarse */
     display: block;
 }
 
@@ -524,16 +490,3 @@ body {
 .carousel-next {
     right: 10px;
 }
-
-=======
-}
-
-.carousel-slide img {
-    padding: 10px;
-    border-radius: 20px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin distorsionarse */
-    display: block;
-}
->>>>>>> 16f2e0a6714a1c270c46a2e5a766fea09c8f5e5b
